@@ -1,22 +1,17 @@
-/*
- * Adiciona box-sizing: border-box universalmente.
- * Isso garante que padding e border sejam incluídos na largura e altura de um elemento,
- * o que é crucial para layouts responsivos.
- */
- *, *::before, *::after {
+/* Reset e Box Sizing */
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-/* Define um tamanho de fonte base para a raiz (html) para desktop */
+/* Fonte base */
 html {
-    font-size: 16px; /* Tamanho base padrão para desktop */
+    font-size: 16px;
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #222;
     color: #eee;
-    box-shadow: 0 0 15px #111;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -24,29 +19,31 @@ body {
     justify-content: center;
     line-height: 1.6;
     min-height: 100vh;
-    overflow: hidden;
-    height: 100vh;
+    overflow-x: hidden;
     margin: 0;
-    padding: 0;
+    padding: 0 1rem;
 }
 
+/* Títulos */
 h1 {
     color: #ffa;
     text-shadow: 0 0 8px #f90;
-    font-size: 2.5rem; /* Usando rem para ser relativo ao font-size do html */
+    font-size: 2.5rem;
 }
 
+/* Links */
 a {
     color: #0af;
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.1rem; /* Usando rem */
+    font-size: 1.1rem;
 }
 
 a:hover {
     text-decoration: underline;
 }
 
+/* Botões */
 button {
     background: #fa0;
     border: none;
@@ -56,7 +53,7 @@ button {
     font-weight: bold;
     color: #222;
     box-shadow: 0 0 6px #fa0;
-    font-size: 1rem; /* Usando rem */
+    font-size: 1rem;
 }
 
 button:hover {
@@ -70,15 +67,17 @@ button.bau:disabled {
     box-shadow: 0 0 6px #555;
 }
 
+/* Citações */
 blockquote {
     font-style: italic;
     border-left: 4px solid #fa0;
     margin: 1.5em 0;
     padding-left: 1em;
     color: #ffc;
-    font-size: 1.1rem; /* Usando rem */
+    font-size: 1.1rem;
 }
 
+/* Listas */
 ul {
     list-style: none;
     padding: 0;
@@ -86,93 +85,83 @@ ul {
 
 li {
     margin: 0.8em 0;
-    font-size: 1rem; /* Usando rem */
+    font-size: 1rem;
 }
 
+/* Conteúdo */
 #conteudo {
     margin-top: 2em;
     padding: 1em;
     background: #222;
     border-radius: 8px;
     width: 100%;
-    max-width: 100%;
+    max-width: 600px;
 }
 
 /* --- Media Queries --- */
 
-/* Para telas até 768px (tablets e celulares) */
+/* Tablets e celulares */
 @media (max-width: 768px) {
-    /* Define um tamanho de fonte base MAIOR para a raiz (html) em mobile */
     html {
-        font-size: 18px; /* Aumentado o base para mobile */
+        font-size: 18px;
     }
 
     body {
-        max-width: 100%;
-        margin: 1em 0;
-        padding: 1em 5vw; /* Aumentei o padding lateral para 5vw para mais respiro */
-        border-radius: 0;
-        box-shadow: none;
+        padding: 1em 5vw;
     }
 
     h1 {
-        font-size: 2.5rem; /* Aumentado o tamanho do título para mobile */
+        font-size: 2.5rem;
     }
 
     a {
-        font-size: 1.3rem; /* Aumentado o tamanho dos links para mobile */
+        font-size: 1.3rem;
     }
 
     button {
-        padding: 0.9em 1.6em; /* Ajustes no padding para melhor toque */
-        font-size: 1.2rem; /* Aumentado o tamanho da fonte dos botões para mobile */
+        padding: 0.9em 1.6em;
+        font-size: 1.2rem;
     }
 
     blockquote {
         margin: 1em 0.5em;
         padding-left: 0.8em;
-        font-size: 1.2rem; /* Ligeiramente aumentado */
+        font-size: 1.2rem;
     }
 
     li {
-        font-size: 1.1rem; /* Aumentado o tamanho dos itens da lista para mobile */
+        font-size: 1.1rem;
     }
 }
 
-/* Para telas muito pequenas, como smartphones na vertical */
+/* Smartphones menores */
 @media (max-width: 480px) {
     html {
-        font-size: 17px; /* Ligeiramente menor para telas muito pequenas, se necessário */
+        font-size: 17px;
     }
+
     body {
-        padding: 0.8em 4vw; /* Ajusta o padding para telas muito pequenas */
+        padding: 0.8em 4vw;
     }
 
     h1 {
-        font-size: 2.2rem; /* Ajusta o tamanho do título para telas muito pequenas */
+        font-size: 2.2rem;
     }
 
     a {
-        font-size: 1.2rem; /* Ajusta o tamanho dos links para telas muito pequenas */
+        font-size: 1.2rem;
     }
 
     button {
-        font-size: 1.1rem; /* Ajusta o tamanho da fonte dos botões */
+        font-size: 1.1rem;
         padding: 0.7em 1.3em;
     }
 
     blockquote {
-        font-size: 1.1rem; /* Ajusta o tamanho da fonte do blockquote */
+        font-size: 1.1rem;
     }
 
     li {
-        font-size: 1.0rem; /* Ajusta o tamanho dos itens da lista */
-    }
-}
-
-/* Para telas maiores que 768px (desktops e notebooks) */
-@media (min-width: 769px) {
-    body {
-        
+        font-size: 1rem;
     }
 }
