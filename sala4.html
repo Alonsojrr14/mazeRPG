@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <button onclick="reiniciar()" aria-label="Reiniciar jogo" style="position:fixed;top:10px;right:10px;z-index:1001;">🔄 Reiniciar</button>
+    <p>Tudo mergulha em escuridão completa. As paredes, o teto e o chão parecem absorver qualquer luz natural ou mágica. Nenhum som externo atravessa. Há apenas o próprio respirar e, se houver silêncio absoluto, um leve som metálico... como uma chave sendo girada lentamente. E um báu de madeira que brilha</p>
+    <button id="btnPegarChave" class="bau" onclick="pegarChave()">🧰 Abrir</button>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (localStorage.getItem('temChave') === 'true') {
+          const botao = document.getElementById('btnPegarChave');
+          if (botao) {
+            botao.disabled = true;
+            botao.innerText = 'Chave já obtida';
+          }
+        }
+      });
+    </script>
+    <ul>
+        <li><a href="index.html">NORTE</a></li>
+        <li><a href="sala8.html">SUL</a></li>
+    </ul>
+</body>
+</html>
